@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Desordem">
 
-    <title>Document</title>
+    <title>Renda Fixa</title>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,63 +14,106 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/style.css">
+
+    <link rel="icon" type="image/x-icon" href="()">
+
+    <!--Scroll Reveal-->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
 </head>
 
 <body>
-    <div class="container">
-        <h1>Calculadora de Investimentos</h1>
-        <form id="investment-form">
-            <div class="input-group">
-                <label for="valor">Valor Investido (R$): </label>
-                <input type="number" id="valor" step="0.01" required>
+    <header>
+        <nav>
+
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="container form">
+            <h1 class="form__title">
+                Calculadora de Investimentos
+            </h1>
+
+            <form class="form" id="investment-form">
+
+                <div class="input-group form__value">
+                    <label class="form__value--label" for="valor">
+                        Valor Investido (R$): 
+                    </label>
+
+                    <input class="form__value--input" type="number" id="valor" step="0.01" required>
+                </div>
+    
+                <div class="input-group form__days">
+                    <label class="form__days__label" for="dias">
+                        Dias Aplicados: 
+                    </label>
+
+                    <input class="form__days__input" type="number" id="dias" required>
+                </div>
+    
+                <div class="input-group form__tax-di">
+                    <label class="form__tax-di--label" for="taxaDiaria">
+                        Taxa DI (%): 
+                    </label>
+
+                    <input class="form__tax-di--input" type="number" id="taxaDiaria" step="0.01" required>
+                </div>
+    
+                <div class="input-group form__value--cdb">
+                    <label class="form__value--cdb-label" for="cdb">
+                        % do CDB 
+                    </label>
+
+                    <input class="form__value--cdb-input" type="number" id="cdb" required>
+                </div>
+                <div class="button-group form__button--contaienr">
+                    <button class="form__button" type="button" onclick="calculateInvestment()">
+                        Calcular
+                    </button>
+                </div>
+            </form>
+
+        </section>
+
+        <section class="container results">
+            <h2 class="results__title">Resultado:</h2>
+
+            <div class="results__container" id="result">
+                <div class="results__container--cdb">
+                    <h3 class="results__container--title-cdb">
+                        CDB
+                    </h3>
+
+                    <p id="valorInvestidoCDB" class="results__container--value"></p>
+                    <p id="rendimentoBrutoCDB" class="results__container--value"></p>
+                    <p id="aliquotaIRCDB" class="results__container--value"></p>
+                    <p id="rendimentoDescontadoIRCDB" class="results__container--value"></p>
+                    <p id="valorTotalLiquidoCDB" class="results__container--value"></p>
+                </div>
+    
+                <div class="results__container--lci">
+
+                    <h3 class="results__container--title-lci">
+                        LCI e LCA
+                    </h3>
+
+                    <p id="valorInvestidoLCI" class="results__container--value"></p>
+                    <p id="rendimentoBrutoLCI" class="results__container--value"></p>
+                    <p id="aliquotaIRLCI" class="results__container--value"></p>
+                    <p id="rendimentoDescontadoIRLCI" class="results__container--value"></p>
+                    <p id="valorTotalLiquidoLCI" class="results__container--value"></p>
+                </div>
             </div>
+        </section>
+    </main>
 
-            <div class="input-group">
-                <label for="dias">Dias Aplicados: </label>
-                <input type="number" id="dias" required>
-            </div>
+    <footer></footer>
 
-            <div class="input-group">
-                <label for="taxaDiaria">Taxa DI (%): </label>
-                <input type="number" id="taxaDiaria" step="0.01" required>
-            </div>
-
-            <div class="input-group">
-                <label for="cdb">% do CDB </label>
-                <input type="number" id="cdb" required>
-            </div>
-            <div class="button-group">
-                <button type="button" onclick="calculateInvestment()">Calcular</button>
-            </div>
-        </form>
-
-        <h2>Resultado:</h2>
-
-        <div id="result">
-            <h3>CDB</h3>
-            <p id="valorInvestidoCDB"></p>
-            <p id="rendimentoBrutoCDB"></p>
-            <p id="aliquotaIRCDB"></p>
-            <p id="rendimentoDescontadoIRCDB"></p>
-            <p id="valorTotalLiquidoCDB"></p>
-
-            <h3>LCI e LCA</h3>
-            <p id="valorInvestidoLCI"></p>
-            <p id="rendimentoBrutoLCI"></p>
-            <p id="aliquotaIRLCI"></p>
-            <p id="rendimentoDescontadoIRLCI"></p>
-            <p id="valorTotalLiquidoLCI"></p>
-
-            <!-- <h3>LCA</h3>
-            <p id="valorInvestidoLCA"></p>
-            <p id="rendimentoBrutoLCA"></p>
-            <p id="aliquotaIRLCA"></p>
-            <p id="rendimentoDescontadoIRLCA"></p>
-            <p id="valorTotalLiquidoLCA"></p> -->
-        </div>
-
-    </div>
     <script src="/js/script.js"></script>
+
+    <script src="https://unpkg.com/boxicons@2.1.2/dist/boxicons.js"></script>
 </body>
 
 </html>
