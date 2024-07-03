@@ -1,15 +1,16 @@
-@import "./variables/colors";
-@import "./variables/fonts";
-@import "./variables/media-querys";
+// @import "./variables/colors";
+// @import "./variables/fonts";
+// @import "./variables/media-querys";
 // @import "./variables/mixins";
 // @import "./variables/reset";
 
 // //COMPONENTS
 // @import "./components/header";
 // @import "./components/footer";
+@import "../scss/components/form";
 
-body{
-    background-color: $white;
-    font-size: $fs-14;
-    font-weight: $fw-6;
-}
+// body{
+//     background-color: $white;
+//     font-size: $fs-14;
+//     font-weight: $fw-6;
+// }

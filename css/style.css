@@ -1,7 +1,19 @@
-body {
-  background-color: #FFF;
-  font-size: 14px;
-  font-weight: 600;
-}
+/* Error: Can't find stylesheet to import.
+ *   ,
+ * 2 | @import 'variables';
+ *   |         ^^^^^^^^^^^
+ *   '
+ *   scss\variables\_mixins.scss 2:9  @import
+ *   scss\components\_form.scss 4:9   @import
+ *   scss\_style.scss 10:9            root stylesheet */
 
-/*# sourceMappingURL=style.css.map */
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Can't find stylesheet to import.\a   \2577 \a 2 \2502  @import 'variables';\d\a   \2502          ^^^^^^^^^^^\a   \2575 \a   scss\\variables\\_mixins.scss 2:9  @import\a   scss\\components\\_form.scss 4:9   @import\a   scss\\_style.scss 10:9            root stylesheet";
+}
