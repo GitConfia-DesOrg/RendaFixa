@@ -1,15 +1,15 @@
 function calculateInvestment() {
     const valor = parseFloat(document.getElementById('valor').value);
     const dias = parseInt(document.getElementById('dias').value);
-    const taxaDiaria = parseFloat(document.getElementById('taxaDiaria').value) / 100;
-    const cdbDiaria = parseFloat(document.getElementById('cdb').value) / 100;
+    const taxaDI = parseFloat(document.getElementById('taxaDI').value) / 100;
 
+    const cdb = parseInt(document.getElementById('cdb').value) / 100
+    const lcia = parseInt(document.getElementById('lcia').value) / 100
+    
+    const cdb_liquidezdiaria = (taxaDI * cdb) / 365;
+    const lci_lca = (taxaDI * lcia) / 365;
 
-    const cdb_liquidezdiaria = (cdbDiaria * taxaDiaria) / 365;
-    const lci_lca = (taxaDiaria * (95 / 100)) / 365;
-
-
-    if (isNaN(valor) || isNaN(dias) || isNaN(taxaDiaria) || isNaN(cdbDiaria) || valor <= 0 || dias <= 0 || taxaDiaria <= 0) {
+    if (isNaN(valor) || isNaN(dias) || isNaN(taxaDI) || isNaN(cdb) || valor <= 0 || dias <= 0 || taxaDI <= 0) {
         alert('Por favor, insira valores válidos.');
         return;
     }
@@ -47,7 +47,7 @@ function calculateLCI_LCA(valor, dias, lci_lca, tipo) {
     let rendimento_bruto = valor * (dias * lci_lca);
     let rendimento_total = valor + rendimento_bruto;
 
-    document.getElementById(`valorInvestido${tipo}`).innerHTML = `Valor investido: R$ ${valor.toFixed(2)}`;
+    document.getElementById(`valorInvestido${tipo}`).innerHTML = 'Valor investido: R$ ${valor.toFixed(2)}';
     document.getElementById(`rendimentoBruto${tipo}`).innerHTML = `Rendimento Bruto: R$ ${rendimento_bruto.toFixed(2)}`;
     document.getElementById(`aliquotaIR${tipo}`).innerHTML = `Esta modalidade de investimento é isenta de Imposto de Renda.`;
     document.getElementById(`rendimentoDescontadoIR${tipo}`).innerHTML = '';

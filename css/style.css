@@ -87,10 +87,4 @@ body main {
   box-shadow: 0 4px 4px hsla(0, 0%, 4%, 0.3);
 }
 
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 /*# sourceMappingURL=style.css.map */
