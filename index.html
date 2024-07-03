@@ -12,32 +12,38 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
     <div class="container">
-        <h1>Calculadora de Investimentos</h1>
+        <h1>Calculadora de Renda Fixa</h1>
         <form id="investment-form">
-            <div class="input-group">
-                <label for="valor">Valor Investido (R$): </label>
-                <input type="number" id="valor" step="0.01" required>
+            <div class="form-floating mb-3">
+                <input type="number" class="form-control w-50" id="Valor" placeholder="Valor investido (R$): " step="0.01" required>
+                <label for="Valor">Valor investido (R$):</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="number" class="form-control w-50" id="Dias" placeholder="Dias Aplicados:">
+                <label for="Dias">Dias Aplicados:</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="number" class="form-control w-50" id="taxaDI" placeholder="Taxa DI (%):" step="0.01" required>
+                <label for="taxaDI" >Taxa DI (%): </label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="number" class="form-control w-50" id="cdb" placeholder="% do CDB">
+                <label for="cdb">% do CDB:</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="number" class="form-control w-50" id="lcia" placeholder="% do LCI/LCA">
+                <label for="lcia">% do LCI/LCA:</label>
             </div>
 
-            <div class="input-group">
-                <label for="dias">Dias Aplicados: </label>
-                <input type="number" id="dias" required>
-            </div>
-
-            <div class="input-group">
-                <label for="taxaDiaria">Taxa DI (%): </label>
-                <input type="number" id="taxaDiaria" step="0.01" required>
-            </div>
-
-            <div class="input-group">
-                <label for="cdb">% do CDB </label>
-                <input type="number" id="cdb" required>
-            </div>
             <div class="button-group">
                 <button type="button" onclick="calculateInvestment()">Calcular</button>
             </div>
