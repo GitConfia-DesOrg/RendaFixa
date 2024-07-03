@@ -40,6 +40,7 @@ function calculateInvestment() {
             Valor da Aliquota do Imposto de Renda para ${dias} dias: ${(ir * 100)}%
             Rendimento bruto com o desconto do Imposto de renda: R$ ${ir_calc.toFixed(2)}
             Valor Total Líquido: R$ ${(rendimento_total - ir_calc).toFixed(2)}
+            Chama o ligas no zap para simulação
             -------------------------------------------------
         `;
     } else if (tipo === 2 || tipo === 3) {
