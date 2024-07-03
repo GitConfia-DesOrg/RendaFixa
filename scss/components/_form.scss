@@ -1,0 +1,9 @@
+// @import "./variables/colors";
+// @import "./variables/fonts";
+// @import "./variables/media-querys";
+@import "../variables/mixins";
+// @import "./variables/reset";
+
+.container{
+    @include flex-center;
+}
