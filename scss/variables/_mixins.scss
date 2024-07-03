@@ -1,0 +1,35 @@
+// @import 'reset';
+@import 'variables';
+
+@mixin flex-justify {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin btnStyle {
+    display: inline-block;
+    background-color: $first-color;
+    color: $body-color;
+    padding: .75rem 1rem;
+    border-radius: .5rem;
+    font-weight: $font-medium;
+    transition: .4s;
+
+    &:hover {
+        background-color: $first-color-alt;
+        color: $body-color;
+    }
+}
+
+@mixin flex-footer {
+    display: flex;
+    justify-content: center;
+    column-gap: 1.5rem; 
+}

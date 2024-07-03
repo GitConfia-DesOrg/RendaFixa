@@ -1,0 +1,264 @@
+@import 'mixins';
+@import 'variables';
+@import 'fonts';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $body-font;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.container {
+    max-width: 968px;
+    margin-left: 16px;
+    margin-right: 16px;
+    @include pc{
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+}
+
+body {
+    background-color: $body-color;
+    color: $text-color;
+    transition: .4s;
+
+    &.light-theme {
+        background-color: $body-color--light;
+
+        header,
+        .services__modal-content,
+        .contact__form-tag {
+            background-color: $container-color--light;
+        }
+
+        header{
+            nav{
+                .nav{
+                    &__menu{
+                        background-color: $container-color--light;
+                        box-shadow: 0px 0px 10px 2px #d4d4d4; 
+                    }
+                    &__link{
+                        color: $first-color;
+                        &-active{
+                            background-image: linear-gradient(180deg, $first-color-2, $container-color--light);
+                        }
+                    }
+                }
+            }
+        }
+
+        h1,
+        h2,
+        h3,
+        span,
+        p,
+        .skills__level,
+        .contact__card-icon,
+        .contact__form-tag,
+        .contact__form-input,
+        .home__social-link:hover{
+            color: $body-color;
+        }
+
+        .about__box,
+        .services__card,
+        .skills__content,
+        .work__card,
+        .testimonial__card,
+        .contact__card,
+        .home__social-link{
+            background-color: $container-color--light-2;
+            box-shadow: 0px 0px 10px 2px #d4d4d4; 
+        }
+        
+        .work{
+            &__card{
+                transition: .5s all;
+    
+                &:hover{
+                    background-color: #4f90d05e;
+                    .work__button{
+                        color: $container-color;
+                    }
+                }
+            }
+            &__button{
+                &:hover{
+                    color: $container-color;
+                }
+            }
+        }
+
+        .footer{
+            background-image: linear-gradient(0deg, $first-color, $container-color--light);
+        }
+    }
+
+    &::-webkit-scrollbar {
+        width: 7px;
+
+        &-track {
+            background-image: $body-color;
+        }
+
+        &-thumb {
+            background: $linear-effect;
+            border-radius: 30px 0 0 30px;
+            border: 3px solid $linear-effect;
+            transition: 1s;
+
+            &:hover {
+                background: $linear-effect;
+                border: 3px solid $linear-effect;
+            }
+        }
+    }
+
+    h1,
+    h2,
+    h3 {
+        color: $title-color;
+        font-weight: $font-semibold;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    input,
+    textarea {
+        font-size: $normal-font-size;
+    }
+
+    button {
+        cursor: pointer;
+        border: none;
+        outline: none;
+        font-size: $normal-font-size;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .section {
+        padding: 1.5rem 0 1rem;
+        @include pc{
+            padding: 3.5rem 0 1rem;
+        }
+
+        &__title {
+            text-align: center;
+            font-size: $h2-font-size;
+            color: $first-color;
+            margin-bottom: 2rem;
+            @include pc{
+                margin-bottom: 3.5rem;
+            }
+        }
+
+        &__subtitle {
+            text-align: center;
+            display: block;
+            font-size: $smaller-font-size;
+            color: $text-color-light;
+        }
+    }
+
+    main {
+        overflow: hidden;
+
+        .active-modal {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .active-work {
+            background-color: $first-color;
+            color: #000;
+        }
+    }
+}
+
+.grid {
+    display: grid;
+    gap: 1.25rem;
+}
+
+.scroll-header {
+    box-shadow: 0 4px 4px hsla(0, 0%, 4%, .3);
+}
+
+.slick-arrow.slick-next,
+.slick-arrow.slick-prev,
+.slick-arrow.slick-next:hover,
+.slick-arrow.slick-prev:hover,
+.slick-arrow.slick-next:focus,
+.slick-arrow.slick-prev:focus {
+    background: url(../images/icone-seta.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    background-color: $text-color-light;
+    transition: all .2s ease-out;
+    background-color: $text-color-light;
+    border-radius: 30px;
+}
+
+.slick-next:before {
+    content: '' !important;
+}
+
+.slick-prev:before {
+    content: '' !important;
+}
+
+.slick-arrow.slick-prev {
+    transform: translateY(-50%) rotate(180deg);
+    right: 25px;
+}
+
+.slick-dots {
+    bottom: -55px !important;
+    @include mobile-2{
+        bottom: -155px !important;
+    }
+
+    li {
+        .slick-active {
+            button {
+                &::before {
+                    opacity: .75;
+                    color: $white  !important;
+                }
+            }
+        }
+
+        button {
+            &::before {
+                font-family: slick;
+                font-size: 14px !important;
+                color: $first-color-alt  !important;
+            }
+        }
+    }
+}
+.slick-dotted.slick-slider {
+    height: 300px;
+}
