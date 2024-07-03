@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":[],"names":[],"mappings":"","file":"style.css"}
+{"version":3,"sourceRoot":"","sources":["../scss/_style.scss","../scss/variables/_colors.scss","../scss/variables/_fonts.scss"],"names":[],"mappings":"AAUA;EACI,kBCPG;EDQH,WENI;EFOJ,aEKG","file":"style.css"}

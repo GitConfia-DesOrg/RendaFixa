@@ -1,5 +1,5 @@
 @import "./variables/colors";
-// @import "./variables/fonts";
+@import "./variables/fonts";
 @import "./variables/media-querys";
 // @import "./variables/mixins";
 // @import "./variables/reset";
@@ -8,6 +8,8 @@
 // @import "./components/header";
 // @import "./components/footer";
 
-// body{
-//     background-color: $blue;
-// }
+body{
+    background-color: $blue;
+    font-size: $fs-14;
+    font-weight: $fw-6;
+}
