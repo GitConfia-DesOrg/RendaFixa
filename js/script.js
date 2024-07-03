@@ -1,60 +1,51 @@
-const taxadi = 11.68 / 100;
-const cdb_liquidezdiaria = taxadi / 365;
-const lci_lca = (taxadi * (95 / 100)) / 365;
-
 function calculateInvestment() {
     const valor = parseFloat(document.getElementById('valor').value);
-    const tipo = parseInt(document.getElementById('tipo').value);
     const dias = parseInt(document.getElementById('dias').value);
+    const taxaDiaria = parseFloat(document.getElementById('taxaDiaria').value) / 100;
+    const cdb_liquidezdiaria = taxaDiaria / 365;
+    const lci_lca = (taxaDiaria * (95 / 100)) / 365;
 
-    if (isNaN(valor) || isNaN(tipo) || isNaN(dias) || valor <= 0 || tipo < 1 || tipo > 3 || dias <= 0) {
+    if (isNaN(valor) || isNaN(dias) || isNaN(taxaDiaria) || valor <= 0 || dias <= 0 || taxaDiaria <= 0) {
         alert('Por favor, insira valores válidos.');
         return;
     }
 
-    let rendimento_bruto;
-    let rendimento_total;
+    calculateCDB(valor, dias, cdb_liquidezdiaria);
+    calculateLCI_LCA(valor, dias, lci_lca, "LCI");
+    calculateLCI_LCA(valor, dias, lci_lca, "LCA");
+}
+
+function calculateCDB(valor, dias, cdb_liquidezdiaria) {
+    let rendimento_bruto = valor * (dias * cdb_liquidezdiaria);
+    let rendimento_total = valor + rendimento_bruto;
+
     let ir;
-    let ir_calc;
-    let resultado = '';
-
-    if (tipo === 1) {
-        rendimento_bruto = valor * (dias * cdb_liquidezdiaria);
-        rendimento_total = valor + rendimento_bruto;
-
-        if (dias < 181) {
-            ir = 22.5 / 100;
-        } else if (dias <= 360) {
-            ir = 20 / 100;
-        } else if (dias <= 720) {
-            ir = 17.5 / 100;
-        } else {
-            ir = 15 / 100;
-        }
-
-        ir_calc = rendimento_bruto * ir;
-        resultado = `
-            -------------------------------------------------
-            Valor investido: R$ ${valor.toFixed(2)}
-            Rendimento Bruto: R$ ${rendimento_bruto.toFixed(2)}
-            Valor da Aliquota do Imposto de Renda para ${dias} dias: ${(ir * 100)}%
-            Rendimento bruto com o desconto do Imposto de renda: R$ ${ir_calc.toFixed(2)}
-            Valor Total Líquido: R$ ${(rendimento_total - ir_calc).toFixed(2)}
-            Chama o ligas no zap para simulação
-            -------------------------------------------------
-        `;
-    } else if (tipo === 2 || tipo === 3) {
-        rendimento_bruto = valor * (dias * lci_lca);
-        rendimento_total = valor + rendimento_bruto;
-        resultado = `
-            -------------------------------------------------
-            Valor investido: R$ ${valor.toFixed(2)}
-            Rendimento Bruto: R$ ${rendimento_bruto.toFixed(2)}
-            Esta modalidade de investimento é isenta de Imposto de Renda.
-            Valor Total Líquido: R$ ${rendimento_total.toFixed(2)}
-            -------------------------------------------------
-        `;
+    if (dias < 181) {
+        ir = 22.5 / 100;
+    } else if (dias <= 360) {
+        ir = 20 / 100;
+    } else if (dias <= 720) {
+        ir = 17.5 / 100;
+    } else {
+        ir = 15 / 100;
     }
 
-    document.getElementById('result').innerText = resultado;
+    let ir_calc = rendimento_bruto * ir;
+
+    document.getElementById('valorInvestidoCDB').innerHTML = `Valor investido: R$ ${valor.toFixed(2)}`;
+    document.getElementById('rendimentoBrutoCDB').innerHTML = `Rendimento Bruto: R$ ${rendimento_bruto.toFixed(2)}`;
+    document.getElementById('aliquotaIRCDB').innerHTML = `Valor da Aliquota do Imposto de Renda para ${dias} dias é de <strong> ${(ir * 100)}% </strong>`;
+    document.getElementById('rendimentoDescontadoIRCDB').innerHTML = `Rendimento bruto com o desconto do Imposto de renda: R$ ${ir_calc.toFixed(2)}`;
+    document.getElementById('valorTotalLiquidoCDB').innerHTML = `Valor Total Líquido: R$ ${(rendimento_total - ir_calc).toFixed(2)}`;
+}
+
+function calculateLCI_LCA(valor, dias, lci_lca, tipo) {
+    let rendimento_bruto = valor * (dias * lci_lca);
+    let rendimento_total = valor + rendimento_bruto;
+
+    document.getElementById(`valorInvestido${tipo}`).innerHTML = `Valor investido: R$ ${valor.toFixed(2)}`;
+    document.getElementById(`rendimentoBruto${tipo}`).innerHTML = `Rendimento Bruto: R$ ${rendimento_bruto.toFixed(2)}`;
+    document.getElementById(`aliquotaIR${tipo}`).innerHTML = `Esta modalidade de investimento é isenta de Imposto de Renda.`;
+    document.getElementById(`rendimentoDescontadoIR${tipo}`).innerHTML = '';
+    document.getElementById(`valorTotalLiquido${tipo}`).innerHTML = `Valor Total Líquido: R$ ${rendimento_total.toFixed(2)}`;
 }

@@ -1,27 +1,20 @@
-@import "mixins";
 @import "media-querys";
 
 $body-font: "Roboto";
 
-$biggest-font-size: 28px;
-$h1-font-size: 24px;
-$h2-font-size: 20px;
-$h3-font-size: 16px;
-$normal-font-size: 15px;
-$small-font-size: 13px;
-$smaller-font-size: 12px;
-$tiny-font-size: 10px;
+//FONT-SIZE
+$fs-12: 12px;
+$fs-14: 14px;
+$fs-16: 16px;
+$fs-18: 18px;
+$fs-20: 20px;
+$fs-22: 22px;
+$fs-24: 24px;
+$fs-26: 26px;
 
-$font-lighter: 300;
-$font-medium: 400;
-$font-semibold: 700;
-
-@include pc {
-  $biggest-font-size: 40px;
-  $h1-font-size: 36px;
-  $h2-font-size: 24px;
-  $h3-font-size: 20px;
-  $normal-font-size: 16px;
-  $small-font-size: 14px;
-  $smaller-font-size: 12px;
-}
+//FONT-WEIGHT
+$fw-3: 300;
+$fw-4: 400;
+$fw-5: 500;
+$fw-6: 600;
+$fw-7: 700;
