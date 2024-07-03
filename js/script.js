@@ -2,9 +2,10 @@ function calculateInvestment() {
     const valor = parseFloat(document.getElementById('valor').value);
     const dias = parseInt(document.getElementById('dias').value);
     const taxaDI = parseFloat(document.getElementById('taxaDI').value) / 100;
-    const cdb = parseInt(documente.getElementById('cdb').value) / 100
+
+    const cdb = parseInt(document.getElementById('cdb').value) / 100
     const lcia = parseInt(document.getElementById('lcia').value) / 100
-    
+
     const cdb_liquidezdiaria = (taxaDI * cdb) / 365;
     const lci_lca = (taxaDI * lcia) / 365;
 
