@@ -30,9 +30,25 @@
             </div>
 
             <div class="input-group">
-                <label for="taxaDiaria">Taxa Diária (%): </label>
+                <label for="taxaDiaria">Taxa DI (%): </label>
                 <input type="number" id="taxaDiaria" step="0.01" required>
             </div>
+
+            <div class="input-group">
+                <label for="cdb">% do CDB </label>
+                <input type="number" id="cdb" required>
+            </div>
+
+            <!-- <div class="input-group">
+                <label for="tipo">Tipo de Investimento: </label>
+                <select id="tipo" required>
+                    <option value="">Selecione</option>
+                    <option value="1">CDB</option>
+                    <option value="2">LCI</option>
+                    <option value="3">LCA</option>
+                </select>
+
+            </div> -->
 
             <div class="button-group">
                 <button type="button" onclick="calculateInvestment()">Calcular</button>
