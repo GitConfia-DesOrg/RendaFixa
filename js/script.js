@@ -1,11 +1,14 @@
 function calculateInvestment() {
     const valor = parseFloat(document.getElementById('valor').value);
     const dias = parseInt(document.getElementById('dias').value);
-    const taxaDiaria = parseFloat(document.getElementById('taxaDI').value) / 100;
-    const cdb_liquidezdiaria = taxaDiaria / 365;
-    const lci_lca = (taxaDiaria * (95 / 100)) / 365;
+    const taxaDI = parseFloat(document.getElementById('taxaDI').value) / 100;
+    const cdb = parseInt(documente.getElementById('cdb').value) / 100
+    const lcia = parseInt(document.getElementById('lcia').value) / 100
+    
+    const cdb_liquidezdiaria = (taxaDI * cdb) / 365;
+    const lci_lca = (taxaDI * lcia) / 365;
 
-    if (isNaN(valor) || isNaN(dias) || isNaN(taxaDiaria) || valor <= 0 || dias <= 0 || taxaDiaria <= 0) {
+    if (isNaN(valor) || isNaN(dias) || isNaN(taxaDI) || valor <= 0 || dias <= 0 || taxaDI <= 0) {
         alert('Por favor, insira valores válidos.');
         return;
     }
