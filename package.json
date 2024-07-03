@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/GitConfia-DesOrg/RendaFixa/issues"
   },
-  "homepage": "https://github.com/GitConfia-DesOrg/RendaFixa#readme"
+  "homepage": "https://github.com/GitConfia-DesOrg/RendaFixa#readme",
+  "dependencies": {
+    "yarn": "^1.22.22"
+  }
 }
