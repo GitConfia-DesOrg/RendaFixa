@@ -1,13 +1,19 @@
 @import "./variables/colors";
 @import "./variables/fonts";
 @import "./variables/media-querys";
-@import "./variables/mixins";
-@import "./variables/reset";
+// @import "./variables/mixins";
+// @import "./variables/reset";
 
-
-@import "./components/header";
-@import "./components/footer";
+// //COMPONENTS
+// @import "./components/header";
+// @import "./components/footer";
 
 body{
+<<<<<<< HEAD
+    background-color: $blue;
+    font-size: $fs-14;
+    font-weight: $fw-6;
+=======
     background-color: $white;
+>>>>>>> 2ddb135d88df5e3b6c84038569baec23ada316d4
 }
