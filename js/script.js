@@ -47,7 +47,7 @@ function calculateLCI_LCA(valor, dias, lci_lca, tipo) {
     let rendimento_bruto = valor * (dias * lci_lca);
     let rendimento_total = valor + rendimento_bruto;
 
-    document.getElementById(`valorInvestido${tipo}`).innerHTML = 'Valor investido: R$ ${valor.toFixed(2)}';
+    document.getElementById(`valorInvestido${tipo}`).innerHTML = `Valor investido: R$ ${valor.toFixed(2)}`;
     document.getElementById(`rendimentoBruto${tipo}`).innerHTML = `Rendimento Bruto: R$ ${rendimento_bruto.toFixed(2)}`;
     document.getElementById(`aliquotaIR${tipo}`).innerHTML = `Esta modalidade de investimento é isenta de Imposto de Renda.`;
     document.getElementById(`rendimentoDescontadoIR${tipo}`).innerHTML = '';
