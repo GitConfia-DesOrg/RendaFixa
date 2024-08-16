@@ -1,0 +1,29 @@
+@import "../variables/colors";
+@import "../variables/fonts";
+@import "../variables/media-querys";
+@import "../variables/mixins";
+@import "../variables/reset";
+
+.nav{
+    width: 85%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin: 20px 0;
+    padding: 0 0 20px 0;
+    // background-color: $blue;
+
+    &__logo{
+        img{
+            height: 50px;
+            border-radius: 10px;
+            transition: .5s all;
+            box-shadow: 0 0 10px $blue;
+
+            &:hover{
+                box-shadow: 0 0 10px 5px $blue;
+            }
+        }
+    }
+}

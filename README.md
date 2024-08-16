@@ -1,8 +1,9 @@
 # RendaFixa
 
 Cmd para rodar o scss
-sass --watch scss/_style.scss:css/style.css
+yarn scss
 
-automatizar o scss
-criar função para o usuario digitar a taxa di + % do cdb
+automatizar o scss - automatizado
+criar função para o usuario digitar a taxa di + % do cdb - criado
 mudar o bloco de resultados
+criar footer
